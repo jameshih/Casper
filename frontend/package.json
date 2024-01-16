@@ -16,6 +16,7 @@
     "clsx": "^2.1.0",
     "connectkit": "^1.6.0",
     "lucide-react": "^0.309.0",
+    "lz-string": "^1.5.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",

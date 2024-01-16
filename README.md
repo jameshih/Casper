@@ -10,7 +10,7 @@ Casper the friendly GHO tipper
 - [x] ConnectWallet
 - [x] Get GHO balance of the connected account
 - [x] Transact GHO to another account on the same chain
-- [ ] Create donate page (auto fetch donate page info)
-- [ ] Owner can connect wallet to edit donate page
+- [x] Fetch data and render user page
+- [ ] Create Widget page
 - [ ] Transact GHO to another account on a different chain via CCIP
 - [ ] Errors and callbacks notification UIs
