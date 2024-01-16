@@ -8,7 +8,7 @@ import GHO_ABI from "../lib/contracts/GHO_ABI.json";
 import { useState } from "react";
 import { formatEther } from "viem";
 
-const contract_address = "0x5d00fab5f2F97C4D682C1053cDCAA59c2c37900D"; //GHO on Sepolia
+const contract_address = "0xc4bF5CbDaBE595361438F8c6a187bDc330539c60"; //GHO on Sepolia
 
 export default function Home() {
   const { address, isConnecting, isDisconnected } = useAccount();
