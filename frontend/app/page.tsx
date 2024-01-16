@@ -31,9 +31,7 @@ export default function Home() {
       description: description.trim(),
     };
     const compressed = LZString.compressToBase64(JSON.stringify(data));
-    const url = `${
-      "https://" + process.env.NEXT_PUBLIC_VERCEL_URL
-    }/u?q=${compressed}`;
+    const url = `https://casper-nine.vercel.app/u?q=${compressed}`;
     setCode(
       `[![Casper the Friendly GHO Tipper](https://i.ibb.co/Xjr2hb5/Group-8.png)](${url})`
     );
