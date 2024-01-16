@@ -7,8 +7,8 @@ Casper the friendly GHO tipper
 ## Todos
 
 - [x] UI skeleton
-- [ ] ConnectWallet
-- [ ] Get GHO balance of the connected account
+- [x] ConnectWallet
+- [x] Get GHO balance of the connected account
 - [ ] Transact GHO to another account on the same chain
 - [ ] Transact GHO to another account on a different chain via CCIP
 - [ ] Errors and callbacks notification UIs
