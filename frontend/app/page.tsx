@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ConnectKitButton } from "connectkit";
 import { useAccount, useContractRead, useContractWrite } from "wagmi";
-import GHO_ABI from "./contracts/GHO_ABI.json";
+import GHO_ABI from "../lib/contracts/GHO_ABI.json";
 import { useState } from "react";
 import { formatEther } from "viem";
 
