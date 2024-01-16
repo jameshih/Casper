@@ -31,7 +31,11 @@ export default function Home() {
       description: description.trim(),
     };
     const compressed = LZString.compressToBase64(JSON.stringify(data));
-    setCode(`http://localhost:3000/u?q=${compressed}`);
+    setCode(
+      `${
+        process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000/"
+      }u?q=${compressed}`
+    );
   }
 
   return (
