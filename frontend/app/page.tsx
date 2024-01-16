@@ -31,10 +31,11 @@ export default function Home() {
       description: description.trim(),
     };
     const compressed = LZString.compressToBase64(JSON.stringify(data));
+    const url = `${
+      "https://" + process.env.NEXT_PUBLIC_VERCEL_URL
+    }/u?q=${compressed}`;
     setCode(
-      `${
-        process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000/"
-      }u?q=${compressed}`
+      `[![Casper the Friendly GHO Tipper](https://i.ibb.co/Xjr2hb5/Group-8.png)](${url})`
     );
   }
 
@@ -66,7 +67,10 @@ export default function Home() {
           <Button onClick={handleGetWidget}>Get Widget</Button>
         </div>
         <div className="w-full p-12 flex flex-col items-center space-y-1">
-          <p className="w-full break-all">{code}</p>
+          <h1>Add the following code to GitHub README</h1>
+          <p className="w-full break-all p-4 border-2 rounded-md border-black bg-gray-200">
+            {code}
+          </p>
         </div>
       </div>
     </div>
