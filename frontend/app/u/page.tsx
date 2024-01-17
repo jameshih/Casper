@@ -96,7 +96,9 @@ export default function UserPage() {
               {context.address}
             </a>
           </Badge>
-          <p className="w-full break-normal">{context.description}</p>
+          <p className="w-full break-normal text-center">
+            {context.description}
+          </p>
         </div>
         <div className="w-full p-12 flex flex-col items-center space-y-1">
           {address && !isLoading ? (

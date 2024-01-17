@@ -20,7 +20,10 @@ export default function Home() {
     setAddress(e.target.value);
   }
   function handleSetDescription(e) {
-    setDescription(e.target.value);
+    const inputText = e.target.value;
+    if (inputText.length < 60) {
+      setDescription(e.target.value);
+    }
   }
 
   function handleGetWidget(e) {
@@ -71,8 +74,7 @@ export default function Home() {
             </p>
             <h1 className="pt-2">HTML Widget Code</h1>
             <p className="w-full break-all p-4 border-2 rounded-md border-black bg-gray-200">
-              {`<a href="${code}">
-                <img
+              {`<a href="${code}"><img
                   src="https://i.ibb.co/Xjr2hb5/Group-8.png"
                   alt="TIP ME GHO BUTTON"/></a>`}
             </p>
