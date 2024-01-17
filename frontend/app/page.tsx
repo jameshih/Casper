@@ -34,7 +34,10 @@ export default function Home() {
       address: address.trim(),
       description: description.trim(),
     };
-    const compressed = LZString.compressToBase64(JSON.stringify(data));
+    console.log(data);
+    const compressed = LZString.compressToEncodedURIComponent(
+      JSON.stringify(data)
+    );
     const url = `https://casper-nine.vercel.app/u?q=${compressed}`;
     setCode(url);
   }

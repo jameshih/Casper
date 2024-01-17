@@ -35,7 +35,7 @@ export default function UserPage() {
   const q = param.get("q");
 
   useEffect(() => {
-    const decompressed = LZString.decompressFromBase64(q);
+    const decompressed = LZString.decompressFromEncodedURIComponent(q);
     setContext(JSON.parse(decompressed));
   }, [q]);
 
