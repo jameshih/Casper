@@ -85,7 +85,7 @@ export default function UserPage() {
         <div className="w-full h-2/3 p-12 flex flex-col items-center space-y-4">
           <Avatar className="w-24 h-24 ">
             <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>JD</AvatarFallback>
+            <AvatarFallback>{context.name[0].toUpperCase()}</AvatarFallback>
           </Avatar>
           <h1 className="text-3xl font-bold uppercase">{context.name}</h1>
           <Badge variant="outline" className="bg-purple-100 p-2">
