@@ -24,6 +24,7 @@ export default function Home() {
   }
 
   function handleGetWidget(e) {
+    if (!name.trim() || !address.trim() || !description.trim()) return;
     e.preventDefault();
     const data = {
       name: name.trim(),
@@ -32,9 +33,7 @@ export default function Home() {
     };
     const compressed = LZString.compressToBase64(JSON.stringify(data));
     const url = `https://casper-nine.vercel.app/u?q=${compressed}`;
-    setCode(
-      `[![Casper the Friendly GHO Tipper](https://i.ibb.co/Xjr2hb5/Group-8.png)](${url})`
-    );
+    setCode(url);
   }
 
   return (
@@ -56,20 +55,29 @@ export default function Home() {
             placeholder="Enter your ETH address"
             onChange={handleSetAddress}
           />
-          <h1>Description</h1>
+          <h1>Bio</h1>
           <Textarea
             value={description}
             placeholder="Enter your bio"
             onChange={handleSetDescription}
           />
-          <Button onClick={handleGetWidget}>Get Widget</Button>
+          <Button onClick={handleGetWidget}>Create Widget</Button>
         </div>
-        <div className="w-full p-12 flex flex-col items-center space-y-1">
-          <h1>Add the following code to GitHub README</h1>
-          <p className="w-full break-all p-4 border-2 rounded-md border-black bg-gray-200">
-            {code}
-          </p>
-        </div>
+        {code && (
+          <div className="w-full p-12 flex flex-col items-center space-y-2">
+            <h1>Github README Widget Code</h1>
+            <p className="w-full break-all p-4 border-2 rounded-md border-black bg-gray-200">
+              {`[![Casper the Friendly GHO Tipper](https://i.ibb.co/Xjr2hb5/Group-8.png)](${code})`}
+            </p>
+            <h1 className="pt-2">HTML Widget Code</h1>
+            <p className="w-full break-all p-4 border-2 rounded-md border-black bg-gray-200">
+              {`<a href="${code}">
+                <img
+                  src="https://i.ibb.co/Xjr2hb5/Group-8.png"
+                  alt="TIP ME GHO BUTTON"/></a>`}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
