@@ -3,14 +3,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LZString from "lz-string";
+import { initGA, logPageView } from "@/lib/analytics";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
   const [code, setCode] = useState("");
+
+  useEffect(() => {
+    initGA();
+    logPageView(window.location.pathname, "Create widget page");
+  }, []);
 
   function handleSetName(e) {
     setName(e.target.value);

@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import { formatEther, parseEther } from "viem";
 import LZString from "lz-string";
 import Link from "next/link";
+import { initGA, logPageView } from "@/lib/analytics";
 
 const contract_address = "0xc4bF5CbDaBE595361438F8c6a187bDc330539c60"; //GHO on Sepolia
 
@@ -38,6 +39,11 @@ export default function UserPage() {
     const decompressed = LZString.decompressFromEncodedURIComponent(q);
     setContext(JSON.parse(decompressed));
   }, [q]);
+
+  useEffect(() => {
+    initGA();
+    logPageView(window.location.pathname, context.address);
+  }, [context.address]);
 
   useContractRead({
     address: contract_address,
